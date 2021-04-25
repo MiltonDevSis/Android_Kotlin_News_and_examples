@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">StateFlow</string>
+
+    <string name="hello_flow">Hello Flow!</string>
+    <string name="error">Ops… something is wrong!</string>
+    <string name="button_get_something">Get Something</string>
+</resources>
