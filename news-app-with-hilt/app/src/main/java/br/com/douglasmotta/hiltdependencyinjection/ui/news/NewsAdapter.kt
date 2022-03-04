@@ -9,7 +9,7 @@ import br.com.douglasmotta.hiltdependencyinjection.data.model.Article
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_article.view.*
 
-class NewsAdapter(
+class giNewsAdapter(
     private val articles: List<Article>
 ) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
