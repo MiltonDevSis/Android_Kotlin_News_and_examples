@@ -3,6 +3,7 @@
     package="com.mpfcoding.workmanager_with_jetpackcompose">
 
     <application
+        android:name=".DownloadApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
