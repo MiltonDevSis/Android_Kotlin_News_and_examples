@@ -30,7 +30,7 @@ class DownloadWorker(
         val response = FileApi.instance.downloadImage()
         response.body()?.let { body ->
             return withContext(Dispatchers.IO) {
-                val file = File(context.cacheDir, "image.jpg")
+                val file = File(context.cacheDir, WorkerKeys.CHILD_NAME_DOWNLOAD)
                 val outputStream = FileOutputStream(file)
                 outputStream.use { stream ->
                     try {
@@ -51,17 +51,17 @@ class DownloadWorker(
             }
         }
         if(!response.isSuccessful) {
-            if(response.code().toString().startsWith("5")) {
+            if(response.code().toString().startsWith(WorkerKeys.START_PREFIX)) {
                 return Result.retry()
             }
             return Result.failure(
                 workDataOf(
-                    WorkerKeys.ERROR_MSG to "Network error"
+                    WorkerKeys.ERROR_MSG to WorkerKeys.NETWORK_ERROR
                 )
             )
         }
         return Result.failure(
-            workDataOf(WorkerKeys.ERROR_MSG to "Unknown error")
+            workDataOf(WorkerKeys.ERROR_MSG to WorkerKeys.UNKNOWN_ERROR)
         )
     }
 
