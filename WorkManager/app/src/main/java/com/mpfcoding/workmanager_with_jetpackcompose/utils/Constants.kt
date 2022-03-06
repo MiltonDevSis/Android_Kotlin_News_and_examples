@@ -9,4 +9,14 @@ object Constants {
     // Notification channel
     const val ID = "download_channel"
     const val NAME = "file download"
+
+    // Foreground Notification Service
+    const val CONTENT_TITLE = "Download in progress"
+    const val CONTENT_TEXT = "Downloading..."
+}
+
+object WorkerKeys{
+    const val ERROR_MSG = "errorMsg"
+    const val IMAGE_URI = "imageUri"
+    const val FILTER_URI = "filterUri"
 }
