@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.mpfcoding.bottom_sheet_nubank.MainFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_firstFragment2"
+            app:destination="@id/firstFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.mpfcoding.bottom_sheet_nubank.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/firstFragment2"
+        android:name="com.mpfcoding.bottom_sheet_nubank.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_firstFragment2_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+</navigation>
